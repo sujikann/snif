@@ -5,16 +5,16 @@ import awsconfig from './aws-exports';
 import { withAuthenticator } from 'aws-amplify-react'; 
 import { PhotoPicker } from 'aws-amplify-react';
 
-Amplify.configure(
-  {
-    Storage: {
-      AWSS3: {
-        bucket: 'snif-images-repo'
-      }
-    }
-  }
-)
-console.log(awsconfig)
+// Amplify.configure(
+//   {
+//     Storage: {
+//       AWSS3: {
+//         bucket: 'snif-images-repo'
+//       }
+//     }
+//   }
+// )
+// console.log(awsconfig)
 Amplify.configure(awsconfig);
 
 let uploadToStorage = async pathToImageFile => {

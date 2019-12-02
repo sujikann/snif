@@ -1,0 +1,46 @@
+{
+    "paths": [
+        {
+            "name": "/items",
+            "lambdaFunction": "sniflambda",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/GET",
+                    "/PUT",
+                    "/PATCH"
+                ]
+            }
+        }
+    ],
+    "resourceName": "snifimages",
+    "apiName": "snifimages",
+    "functionArns": [
+        {
+            "lambdaFunction": "sniflambda"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "amplify-snif-dev-131846-authRole",
+        "unAuthRoleName": "amplify-snif-dev-131846-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "sniflambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
