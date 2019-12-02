@@ -1,0 +1,46 @@
+{
+    "paths": [
+        {
+            "name": "/items",
+            "lambdaFunction": "snifsearchlambda",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/GET",
+                    "/PUT",
+                    "/PATCH"
+                ]
+            }
+        }
+    ],
+    "resourceName": "snifsearchapi",
+    "apiName": "snifsearchapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "snifsearchlambda"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "amplify-snif-search-dev-140854-authRole",
+        "unAuthRoleName": "amplify-snif-search-dev-140854-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "snifsearchlambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
